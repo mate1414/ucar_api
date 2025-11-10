@@ -36,13 +36,12 @@ POST /incidents/
 Получить список инцидентов
 ```http
 GET /incidents/
-GET /incidents/?status=new
-GET /incidents/?skip=0&limit=10
+GET /incidents/?status=created
 ```
 
 Обновить статус инцидента
 ```http
-PATCH /incidents/1
+PATCH /incidents/<id>
 {
   "status": "in_progress"
 }
@@ -50,7 +49,7 @@ PATCH /incidents/1
 
 Получить инцидент по ID
 ```http
-GET /incidents/1
+GET /incidents/<id>
 ```
 
 **🔧 Источники**
