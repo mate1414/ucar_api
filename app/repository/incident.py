@@ -16,9 +16,9 @@ class IncidentRepository(BaseRepository):
     def __init__(self, db: Session):
         super().__init__(db)
 
-    def get_one(self, incident_id) -> Incident | None:
+    def get_one(self, incident_id: int) -> Incident | None:
         return self.db.query(
-            models.Incident
+            models.Incident,
         ).filter_by(id=incident_id).one_or_none()
 
     def get_multi_by_status(

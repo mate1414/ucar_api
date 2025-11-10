@@ -1,6 +1,7 @@
 from datetime import datetime
 
 from sqlalchemy import Column, DateTime, Enum, ForeignKey, Integer, Text
+from sqlalchemy.orm import relationship
 
 from app.database import Base
 from app.schemas import enums
@@ -17,3 +18,5 @@ class Incident(Base):
     )
     source_id = Column(Integer, ForeignKey("sources.id"), nullable=False)
     created_at = Column(DateTime, nullable=False, default=datetime.now)
+
+    source = relationship("Source", back_populates="incidents")

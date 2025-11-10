@@ -1,4 +1,5 @@
 from sqlalchemy import Column, Enum, Integer, String, Text
+from sqlalchemy.orm import relationship
 
 from app.database import Base
 from app.schemas import enums
@@ -14,3 +15,5 @@ class Source(Base):
         Enum(enums.SourceType, native_enum=True),
         nullable=False,
     )
+
+    incidents = relationship("Incident", back_populates="source")

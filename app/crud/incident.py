@@ -26,7 +26,7 @@ class IncidentCRUD:
         )
 
         return IncidentResponse.model_validate(
-            self.repository.create(incident)
+            self.repository.create(incident),
         )
 
     def update(

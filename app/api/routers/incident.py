@@ -14,6 +14,7 @@ from app.schemas.incident import (
     IncidentUpdateRequest,
 )
 
+
 router = APIRouter(prefix="/incidents")
 
 
