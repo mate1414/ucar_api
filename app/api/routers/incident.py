@@ -3,7 +3,10 @@ from typing import Any
 from fastapi import APIRouter, Depends
 
 from app.crud.incident import IncidentCRUD
-from app.repository.factory.factory import RepositoryFactory, get_repository_factory
+from app.repository.factory.factory import (
+    RepositoryFactory,
+    get_repository_factory,
+)
 from app.schemas.enums import IncidentStatus
 from app.schemas.incident import (
     IncidentCreateRequest,
